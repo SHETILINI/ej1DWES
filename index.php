@@ -6,7 +6,11 @@ $travel_formateado = number_format($travel, 2, ',', '.');
 $ret = 200;
 $rentencion_formateado = number_format($ret, 2, ',', '.');
 $taxbase;
-print ("<p>The monthly payment corresponding to the month of: the worker John Smith, is, in gross: $salario_formateado €</p>");
+//echo date("Y-m-d\TH-i");
+
+print ("<p>The monthly payment corresponding to the month of: ");
+echo strtoupper(date("F"));
+print(" the worker John Smith, is, in gross: $salario_formateado €</p>");
 printf ("<p>Plus Scroll: + $travel_formateado € </p>");
 printf ("<p>Discount for Social Security: -$rentencion_formateado € </p>");
 
