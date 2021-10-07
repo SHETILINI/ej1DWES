@@ -7,18 +7,18 @@ $ret = 200;
 $rentencion_formateado = number_format($ret, 2, ',', '.');
 $taxbase;
 
-print ("<p>The monthly payment corresponding to the month of: ");
+print ("<pre>The monthly payment corresponding to the month of: \n ");
 echo strtoupper(date("F"));
-print(" the worker John Smith, is, in gross: $salario_formateado €</p>");
-printf ("<p>Plus Scroll: + $travel_formateado € </p>");
-printf ("<p>Discount for Social Security: -$rentencion_formateado € </p>");
+print(" the worker John Smith, is, in gross: \t \t \t $salario_formateado €</pre>");
+printf ("<pre>Plus Scroll: \t \t \t \t \t \t \t +$travel_formateado € </pre>");
+printf ("<pre>Discount for Social Security: \t \t \t \t \t -$rentencion_formateado € </pre>");
 
 
 function tax() {
     global $salario, $travel, $ret;
     $taxbase = ($salario + $travel)-$ret;
     $taxbase_formateada = number_format($taxbase, 2, ',', '.');
-    print ("<p>Tax base: $taxbase_formateada €</p>");
+    print ("<pre>Tax base: \t \t \t \t \t \t \t $taxbase_formateada €</pre>");
     return $GLOBALS['taxbase'] = $taxbase;
 
 }
@@ -28,6 +28,6 @@ $irpf = $taxbase * 0.2;
 $irpf_formateado = number_format($irpf, 2, ',', '.');
 $total = $taxbase - $irpf;
 $total_formateado = number_format($total,2, ',', '.');
-print ("<p>Discount for Irpf: $irpf_formateado €</p>");  
-print ("<p>Total: $total_formateado €</p>");
+print ("<pre>Discount for Irpf: \t \t \t \t \t \t -$irpf_formateado €</pre>");  
+print ("<pre>Total: \t \t \t \t \t \t \t \t $total_formateado €</pre>");
 ?>
