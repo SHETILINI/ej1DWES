@@ -6,7 +6,6 @@ $travel_formateado = number_format($travel, 2, ',', '.');
 $ret = 200;
 $rentencion_formateado = number_format($ret, 2, ',', '.');
 $taxbase;
-//echo date("Y-m-d\TH-i");
 
 print ("<p>The monthly payment corresponding to the month of: ");
 echo strtoupper(date("F"));
